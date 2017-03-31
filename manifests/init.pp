@@ -74,6 +74,12 @@
 #     Enable ldap support on the package
 #     Default: false
 #
+#   [*sudo_syntax_path *]
+#     Specify the path to find visudo for syntax checking.
+#     Only set this if your platform does not have visudo in the default
+#     path.
+#     Default: ['/bin', '/sbin', '/usr/bin', '/usr/sbin']
+#
 # Actions:
 #   Installs sudo package and checks the state of sudoers file and
 #   sudoers.d directory.
@@ -100,7 +106,7 @@ class sudo(
   $config_dir          = $sudo::params::config_dir,
   $source              = $sudo::params::source,
   $ldap_enable         = false,
-  $sudo_syntax_path    = $sudo::params::sudo_syntax_path,
+  $sudo_syntax_path    = ['/bin', '/sbin', '/usr/bin', '/usr/sbin']
 ) inherits sudo::params {
 
 
