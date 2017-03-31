@@ -100,6 +100,7 @@ class sudo(
   $config_dir          = $sudo::params::config_dir,
   $source              = $sudo::params::source,
   $ldap_enable         = false,
+  $sudo_syntax_path    = $sudo::params::sudo_syntax_path,
 ) inherits sudo::params {
 
 
